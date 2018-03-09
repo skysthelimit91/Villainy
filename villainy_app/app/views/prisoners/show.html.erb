@@ -1,0 +1,11 @@
+<h2><%= @prisoner.name %></h2>
+
+Description:
+<p><i><%= @prisoner.description %></i></p>
+<img src="<%= @prisoner.image_url%>" style="max-height: 400px; max-width: 400px;">
+
+<br>
+<%= button_to 'Release prisoner', prisoner_path(@prisoner), method: :delete %>
+<br>
+<%= link_to 'Edit prisoner file', edit_prisoner_path(@prisoner) %>
+<br>

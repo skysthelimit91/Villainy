@@ -1,0 +1,13 @@
+<h2>Update Prison</h2>
+
+<%= form_for @prison do |form| %>
+
+  <%= label_tag :number %>
+
+  <br>
+
+  <%= form.text_area :number, placeholder: 'Number' %>
+
+  <br>
+  <%= submit_tag 'Update Prison!' %>
+<% end %>

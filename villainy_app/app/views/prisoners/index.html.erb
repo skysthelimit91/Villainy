@@ -1,0 +1,12 @@
+<h2>Prisoners</h2>
+
+<% if @prisoners.empty? %>
+  Stop slacking and start locking up some criminals!!!!
+
+<% else %>
+  <ul>
+    <% @prisoners.each do |prisoner| %>
+      <li><%= link_to prisoner.name, prisoner_path(prisoner) %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,17 @@
+<h2>Prisons</h2>
+<% @prisons.each do |prison| %>  
+
+<% if @prisons.empty? %>
+  Build a prison to get started
+
+<% else %>
+<ul>
+    <li><%= link_to "Prison: #{prison.number}", "#{prison_path(prison)}/prisoners" %></li>
+      <%= button_to 'Close prison', "prisons/#{prison.id}", method: :delete %>
+
+    <% end %>
+  
+</ul>
+
+<% end %>
+

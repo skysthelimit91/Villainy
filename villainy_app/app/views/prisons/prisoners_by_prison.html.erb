@@ -1,0 +1,9 @@
+<% @prison.prisoners.each do |prisoner|%>
+
+
+<h2><%= link_to prisoner.name, prisoner_path(prisoner)%></h2>
+<img src="<%= prisoner.image_url%>" style="max-height: 300px; max-width: 300px;">
+
+
+
+<% end %>

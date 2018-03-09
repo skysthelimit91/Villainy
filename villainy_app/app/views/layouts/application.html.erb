@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Villainy</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="header">Villainy app</div>
+
+    <% if current_user %>
+      <%= link_to current_user.username, user_path(current_user) %> signed in
+      <%= button_to 'Log out', session_path, method: :delete %>
+    <% end %>
+
+    <% if flash[:notice].present? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <% if flash[:error].present? %>
+      <div class="errors">
+        <b>Errors:</b>
+
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+
+    <% if current_user %>
+      <br><br>
+      <%= link_to 'Prisons', prisons_path %>
+      |
+      <%= link_to 'Build Prison', new_prison_path %>
+      |
+      <%= link_to 'Create Prisoner', new_prisoner_path %>
+    <% end %>
+
+    <div class="footer"></div>
+  </body>
+</html>

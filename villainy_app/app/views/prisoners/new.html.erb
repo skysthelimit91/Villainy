@@ -1,0 +1,15 @@
+<h2>Lock up a prisoner</h2>
+
+<%= form_for @prisoner do |form| %>
+  <%= form.text_field :name, placeholder: 'Name' %>
+  <br>
+  <%= form.text_area :description, placeholder: 'Description' %>
+    <br>
+  <%= form.text_field :image_url, placeholder: 'Image' %>
+
+  <br>
+  <%= form.text_field :prison_id, placeholder: 'Prison ID' %>
+    <br>
+
+  <%= submit_tag 'Lock up!' %>
+<% end %>
